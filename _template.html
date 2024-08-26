@@ -21,35 +21,94 @@
 
         <header>
 
-            <div>
+            <!-- Ao clicar, vai para a página inicial (raiz) -->
+            <a href="/" title="Clique para acessar a página inicial">
                 <img src="/images/favicon.png" alt="Logotipo do PyBlog">
                 <h1>
                     PyBlog
-                    <small>Pra entende de cobras</small>
+                    <small>Pra quem entende de cobras</small>
                 </h1>
-            </div>
+            </a>
 
             <!-- formulário de busca -->
             <form action="/search.html" method="get">
-                <input type="search" name="q" id="headerSearch">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass fa-fw"></i></button>
+                <input type="search" name="q" id="headerSearch" placeholder="Procurar por...">
+                <button type="submit" title="Clique para iniciar a busca"><i
+                        class="fa-solid fa-magnifying-glass fa-fw"></i></button>
             </form>
 
         </header>
 
-        <nav></nav>
+        <nav>
+            <a href="/" title="Ir para a página inicial">
+                <i class="fa-solid fa-house fa-fw"></i>
+                <span>Início</span>
+            </a>
+            <a href="/contacts.html" title="Ir para Faça Contato">
+                <i class="fa-solid fa-comments fa-fw"></i>
+                <span>Contatos</span>
+            </a>
+            <a href="/about.html" title="saiba mais sobre agente">
+                <i class="fa-solid fa-circle-info fa-fw"></i>
+                <span>Sobre</span>
+            </a>
+        </nav>
 
         <main>
 
             <article>
 
+                <h2>Título do artigo</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit odit, sint assumenda dolor quis,
+                    nulla eligendi, accusantium earum corporis modi facilis distinctio nisi tempore quidem sequi
+                    asperiores consequatur suscipit non.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus alias reiciendis adipisci facilis
+                    pariatur quod molestiae officia distinctio? Fugiat deserunt dicta eveniet praesentium ullam odit,
+                    tempore minus dignissimos quibusdam provident.</p>
+                <img src="https://picsum.photos/200/200" alt="Imagem aleatória">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus repellat, odio aut magnam
+                    incidunt totam voluptatum reiciendis, laborum nisi modi vero illo quos impedit nihil quaerat
+                    voluptate possimus ipsum laudantium.</p>
+
             </article>
 
-            <aside></aside>
+            <aside>
+
+                <h3>Veja também</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <p>Repellendus asperiores aut voluptas architecto consequuntur.</p>
+
+            </aside>
 
         </main>
 
-        <footer class="site-title">RODAPÉ</footer>
+        <footer class="site-title">
+            
+            <div class="footer_top">
+
+                <a href="/">HOME</a>
+                <div>&copy; Copyright 2024 Joca da Silva</div>
+                <a href="#top">TOPO</a>
+
+            </div>
+
+            <div class="footer_botton">
+
+                <nav class="social">
+                    <a href="https://facebook"></a>
+                    <a href="https://insta"></a>
+                    <a href="https://github"></a>
+                </nav>
+
+                <nav class="fast">
+                    <a href="/policyes.html"></a>
+                    <a href="/contacts.html"></a>
+                    <a href="/about.html"></a>
+                </nav>
+
+            </div>
+
+        </footer>
 
     </div>
 
