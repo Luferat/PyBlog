@@ -6,18 +6,40 @@
 
 /* Reset para que o CSS seja o mesmo em todos os navegadores modernos */
 
+/* Reset das caixas */
 * {
-    /* Reset das caixas */
     box-sizing: border-box;
     outline: none;
+}
+
+/* Reset de formulários */
+input,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    padding: .5rem .75rem;
+    border: none;
+}
+
+/* Reset dos links */
+a {
+    text-decoration: none;
+    color: steelblue;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: orangered;
 }
 
 html,
 body,
 #wrap {
     /* Reset dos elementos raiz */
+    /* Para usar height=100% */
     position: relative;
     width: 100%;
+    /* Sticky footer */
     height: 100%;
     padding: 0;
     margin: 0;
@@ -40,31 +62,36 @@ body {
 }
 
 #wrap {
-    max-width: 1024px;
     /* Largura máxima → 1080px - barra de rolagem */
-    min-width: 280px;
+    max-width: 1024px;
     /* Largura mínima → 320px - barra de rolagem */
-    margin: auto;
+    min-width: 280px;
     /* Bloco centralizado */
+    margin: auto;
+    /* Sticky footer */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Reset de formulários */
-input,
-button {
-    font-family: inherit;
-    font-size: inherit;
-    padding: .5rem .75rem;
-    border: none;
+/* Estiliza filhos de #wrap */
+#wrap>header,
+#wrap>nav,
+#wrap>footer,
+#wrap>main>article,
+#wrap>main>aside {
+    margin: .5rem;
+    border-radius: .5rem;
 }
+
 
 /*********************
  ***** Cabeçalho *****
  *********************/
 
 #wrap>header {
-    background-color: steelblue;
-    margin: .25rem;
-    border-radius: .5rem;
+    background-color: rgb(70, 130, 180);
+    display: flex;
+    flex-direction: column;
 }
 
 #wrap>header>a {
@@ -86,7 +113,7 @@ button {
     letter-spacing: .25rem;
     text-align: center;
     /* Experimental */
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 1px rgb(255, 255, 255);
 }
 
 #wrap>header small {
@@ -94,26 +121,27 @@ button {
     font-size: .72rem;
     letter-spacing: normal;
     font-weight: normal;
-    color: white;
+    color: rgb(255, 255, 255);
     /* Experimental */
     -webkit-text-stroke: 0;
 }
 
 /* Formulário de busca no header */
+
 #wrap>header form {
     display: flex;
     padding: 1rem;
 }
 
 #wrap>header form input {
-    width: 100%;
+    flex-grow: 1;
     border-radius: .3rem 0 0 .3rem;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 #wrap>header form button {
     border-radius: 0 .3rem .3rem 0;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding-left: .25rem;
     padding-right: .25rem;
 }
@@ -128,26 +156,24 @@ button {
  *************************/
 
 #wrap>nav {
-    background-color: black;
-    margin: .25rem;
-    border-radius: .5rem;
+    background-color: rgba(0, 0, 0, .9);
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
 #wrap>nav a {
-    color: #fff;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem .7rem;
+    padding: .7rem;
     transition: .2s;
 }
 
 #wrap>nav a:hover {
-    color: orange;
+    color: rgb(255, 165, 0);
 }
 
 /* Link de Início */
@@ -161,6 +187,127 @@ button {
 }
 
 #wrap>nav span {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
+}
+
+/****************************
+ ***** Template central *****
+ ****************************/
+
+#wrap>main {
+    /* Sticky Footer */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap>main>article {
+    background-color: rgba(255, 255, 255, .9);
+    padding: 1rem;
+    /* Sticky Footer */
+    flex-grow: 1;
+}
+
+#wrap>main>article>h2:first-child,
+#wrap>main>aside>h3:first-child {
+    margin: 0;
+}
+
+#wrap>main>aside {
+    background-color: rgb(255, 243, 219);
+    padding: 1rem;
+}
+
+/******************
+ ***** Rodapé *****
+ ******************/
+
+#wrap>footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+#wrap>footer a {
+    color: white;
+}
+
+#wrap>footer a:hover {
+    color: orange;
+    text-decoration: none;
+}
+
+.footer_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 0;
+    border-bottom: 1px dotted gray;
+}
+
+.footer_top a i {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.footer_top div {
+    font-size: small;
+}
+
+.footer_botton {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.footer_botton nav {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.9;
+}
+
+.footer_botton nav h4 {
+    margin: 0 0 .5rem 0;
+}
+
+.footer_botton nav a {
+    margin-left: 1rem;
+}
+
+/********************************************
+ ***** Resoluções de 640 pixels ou mais *****
+ ***** Usando Media Queries             *****
+ ********************************************/
+
+@media screen and (min-width: 575px) {
+
+    /* altera o cabeçalho */
+    #wrap>header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Altera o menu */
+    #wrap>nav a {
+        flex-direction: row;
+    }
+
+    #wrap>nav a i {
+        font-size: 1.2rem;
+        margin: 0 .35rem 0 0;
+    }
+}
+
+@media screen and (min-width: 640px) {
+
+    #wrap>main {
+        flex-direction: row;
+    }
+
+    #wrap>main>aside {
+        min-width: 12.5rem;
+        max-width: 12.5rem;
+    }
+
 }
