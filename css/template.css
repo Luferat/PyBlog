@@ -311,3 +311,16 @@ body {
     }
 
 }
+
+
+/********************************
+ ***** Estilos de uso geral *****
+ ********************************/
+
+.center {
+    text-align: center;
+}
+
+.red {
+    color: red;
+}

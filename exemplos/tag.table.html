@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Tabelas</title>
+    <style>
+        .zebrinha{
+            background-color: rgb(225, 225, 225);
+            color: white;
+        }
+
+        .zebrinha tr:nth-child(even) {
+            background-color: steelblue;
+        }
+
+        .zebrinha tr:nth-child(odd) {
+            background-color: orangered;
+        }
+
+        .zebrinha th {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tabelas</h1>
+
+    <h2>Tabela simples</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Nascimento</th>
+        </tr>
+
+        <tr>
+            <td>Joca da Silva</td>
+            <td>joca@silva.com</td>
+            <td>10/10/2000</td>
+        </tr>
+
+        <tr>
+            <td>Maria</td>
+            <td>maria@gmail.com</td>
+            <td>21/04/1999</td>
+        </tr>
+
+        <tr>
+            <td>Setembrino</td>
+            <td>set@brino.com</td>
+            <td>21/10/1997</td>
+            <td>Isso é bug</td>
+        </tr>
+
+    </table>
+
+    <h2>Mesclagem de celulas</h2>
+
+    <table border="1">
+        <caption>Minha lista</caption>
+
+        <tr>
+            <td colspan="3">Lista de items</td>
+        </tr>
+
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Local</th>
+        </tr>
+
+        <tr>
+            <td>001</td>
+            <td>Treco</td>
+            <td rowspan="2">Armário 2</td>
+        </tr>
+
+        <tr>
+            <td>002</td>
+            <td>Bagulho</td>
+        </tr>
+
+    </table>
+
+
+    <h2>Tabela zebrinha</h2>
+
+    <table border="1" class="zebrinha">
+        <tr>
+            <th>item</th>
+            <th>local</th>
+        </tr>
+        <tr>
+            <td>coisa</td>
+            <td>armário</td>
+        </tr>
+        <tr>
+            <td>coisa</td>
+            <td>armário</td>
+        </tr>
+        <tr>
+            <td>coisa</td>
+            <td>armário</td>
+        </tr>
+        <tr>
+            <td>coisa</td>
+            <td>armário</td>
+        </tr>
+        <tr>
+            <td>coisa</td>
+            <td>armário</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

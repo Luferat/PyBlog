@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de Listas</title>
+</head>
+
+<body>
+
+    <h1>Listas</h1>
+
+    <h2>Lista não ordenada</h2>
+
+    <!--
+    ul → Unordened list
+    ol → ordened list
+    dl → definition list
+        dt → definition term
+        dd → definition
+    li → list item
+    -->
+    <ul>
+        <li>Biscoito</li>
+        <li>Bolacha</li>
+        <ul>
+            <li style="list-style:disc">Doce</li>
+            <li>Salgada</li>
+            <ul>
+                <li>Sem graça</li>
+                <li>Com graça</li>
+            </ul>
+            <li>Sem gosto</li>
+        </ul>
+        <li>Peteca</li>
+    </ul>
+
+    <h2>Lista ordenada</h2>
+
+    <ol type="a">
+        <li>Biscoito</li>
+        <li>Bolacha</li>
+        <ol type="A" start="3">
+            <li>Doce</li>
+            <li>Salgada</li>
+            <ol type="I">
+                <li>Sem graça</li>
+                <li>Com <strong>graça</strong></li>
+            </ol>
+            <li>Sem gosto</li>
+        </ol>
+        <li><a href="https://copilot.microsoft.com">Copilot</a></li>
+        <li>Peteca</li>
+    </ol>
+
+    <h2>Lista de teste</h2>
+
+    <ul style="display: flex; list-style: none;">
+        <li>Casa</li>
+        <li>Anúncios</li>
+        <li>Contatos</li>
+        <li>Sobre</li>
+    </ul>
+
+<h2>Lista de definições</h2>
+
+<dl>
+    <dt>HMTL</dt>
+    <dd>Linguagem de marcações usada na construção de páginas de internet.</dd>
+</dl>
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>
